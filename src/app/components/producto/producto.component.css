@@ -1,0 +1,107 @@
+:host {
+    display: block;
+    background-color: black; /* Fondo negro */
+   
+    min-height: 100vh; /* Ocupa toda la altura de la pantalla */
+    padding: 20px; /* Añade un poco de padding para que el contenido no esté pegado a los bordes */
+}
+
+
+.titulo-centrado {
+    text-align: center;
+    margin-bottom: 20px;
+    color :#ff0000;
+}
+
+.productos {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.producto {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+    width: 200px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9; 
+    transition: transform 0.2s, box-shadow 0.2s; 
+}
+
+.producto:hover {
+    transform: scale(1.05); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.producto .img-producto img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+.producto .nombre-producto {
+    height: 3rem;
+}
+
+.producto .nombre-producto h3 {
+    font-size: 1.2em;
+    margin: 8px 0;
+}
+
+.producto .precio-producto p {
+    font-size: 1em;
+    color: #555;
+}
+
+.producto button {
+    background-color: #202123;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.producto button:hover {
+    background-color: #aeb2b7;
+    color: #202123;
+}
+
+.contenedor-boton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 5rem;
+}
+
+.carrito-button,
+.inventario-button {
+    width: 10rem;
+    background-color: #202123;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.carrito-button:hover,
+.inventario-button:hover {
+    background-color: #aeb2b7;
+    color: #202123;
+}
+
+@media (max-width: 600px) {
+    .producto {
+        width: 100%; /* Full width on small screens */
+    }
+    .producto .nombre-producto{
+        height: auto;
+    }
+}

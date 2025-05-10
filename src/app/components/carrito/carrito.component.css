@@ -1,0 +1,229 @@
+/* Contenedor principal con mejor estructura */
+/* Asegura que toda la página tenga fondo negro */
+
+:host {
+    display: block;
+    background-color: black; /* Fondo negro */
+   
+    min-height: 100vh; /* Ocupa toda la altura de la pantalla */
+    padding: 20px; /* Añade un poco de padding para que el contenido no esté pegado a los bordes */
+}
+p,
+span,
+h2,
+h3{
+    font-family: sans-serif;
+}
+.carrito-container {
+   
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px #ff0000;
+    background-color: #ffffff; 
+    margin-top: 100px;
+}
+
+.header-carrito { 
+   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    color: #000;
+}
+.volver {
+    position: absolute;
+    left: 1rem;
+    color: rgb(0, 0, 0);
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.volver:hover{
+    color: #ff0000;
+}
+
+
+
+.carrito-titulo {
+    text-align: center;
+    color: rgb(0, 0, 0);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.carrito-item .img-producto {
+    width: 50px;
+    height: 50px;
+    margin-right: 1rem;
+  }
+  
+  .carrito-item .img-producto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+
+.carrito-lista {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 0 1.5rem 0;
+}
+
+.carrito-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 0.8rem;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.carrito-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.producto-info {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.producto-nombre {
+    font-weight: 500;
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+}
+
+.producto-precio {
+    font-weight: 600;
+    color: #555;
+}
+
+/* Botones mejorados */
+.eliminar-button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-left: 1rem;
+}
+
+.eliminar-button:hover {
+    background-color: #c82333;
+}
+
+/* Resumen del carrito */
+.carrito-resumen {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-top: 1px solid #dee2e6;
+    margin-top: 1rem;
+}
+
+.carrito-total {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.recibo-button {
+    background-color: #202123;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    font-weight: 500;
+}
+
+.recibo-button:hover {
+    background-color: #aeb2b7;
+    color: #202123;
+}
+
+/* Carrito vacío mejorado */
+.carrito-vacio {
+    text-align: center;
+    color: #6c757d;
+    padding: 2rem;
+    font-size: 1.2rem;
+}
+
+.carrito-vacio-icon {
+    display: block;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+/* Recibo mejorado */
+.recibo {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+}
+
+.recibo-titulo {
+    margin-top: 0;
+    color: #202123;
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+}
+
+.recibo-contenido {
+    background-color: #f1f1f1;
+    padding: 1rem;
+    border-radius: 5px;
+    overflow-x: auto;
+    font-family: monospace;
+    font-size: 0.9rem;
+}
+
+.descargar-opciones{
+text-align: center;
+
+
+}
+.descargar-recibo-button{
+    background-color: #1e41a1;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-left: 1rem;
+}
+
+.descargar-recibo-button:hover {
+    background-color: #b5c5f0;
+    color: #202123;
+}
+.descargar-xml-button{
+    background-color: #6f35dc;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-left: 1rem;
+}
+
+.descargar-xml-button:hover {
+    background-color: #cbb9ec;
+    color: #202123;
+}

@@ -1,0 +1,60 @@
+<div class="carrito-container">
+  <div class="header-carrito">
+    <span class="volver" (click)="regresar()">Volver</span>
+    <h2 class="carrito-titulo">Carrito de compras</h2>
+  </div>
+
+  <div class="contenedor-info">
+    <div class="carrito-contenido" *ngIf="carrito.length > 0">
+      <ul class="carrito-lista">
+        <li class="carrito-item" *ngFor="let producto of carrito; let i = index">
+          <div class="producto-info">
+            <span class="producto-nombre">{{ producto.nombre }}</span>
+
+            <!-- Mostrar cantidad -->
+            <span class="producto-cantidad">Cantidad: {{ producto.cantidad }}</span>
+
+            <span class="producto-precio">
+              ${{ (producto.precio * producto.cantidad).toFixed(2) }}
+            </span>
+            
+            <div class="cantidad-controls">
+              <!-- Botón de menos -->
+              <button (click)="modificarCantidad(i, -1)" [disabled]="producto.cantidad <= 1">-</button>
+              <!-- Botón de más -->
+              <button (click)="modificarCantidad(i, 1)">+</button>
+            </div>
+          </div>
+          <button class="eliminar-button" (click)="eliminarProducto(i)">Eliminar</button>
+        </li>
+      </ul>
+
+      <div class="carrito-resumen">
+        <div class="carrito-subtotal">
+          <span>Subtotal:</span>
+          <span> ${{ subtotal.toFixed(2) }}</span>
+        </div>
+        <div class="carrito-total">
+          <span>Total:</span>
+          <span> ${{ total.toFixed(2) }}</span>
+        </div>
+        <button class="recibo-button" (click)="generarXML()">Generar Recibo</button>
+      </div>
+    </div>
+
+    <p *ngIf="carrito.length === 0" class="carrito-vacio">
+      <span class="carrito-vacio-icon">🛒</span>
+      El carrito está vacío
+    </p>
+
+    <div *ngIf="recibo" class="recibo">
+      <h3 class="recibo-titulo">Recibo Generado</h3>
+      <pre class="recibo-contenido">{{ recibo }}</pre>
+      <div class="contenedor-btn-recibo">
+        <button class="descargar-button" (click)="descargarXML()">Descargar XML</button>
+        <div id="paypal-button-container" class="paypal-button"></div>
+      </div>
+
+    </div>
+  </div>
+</div>
